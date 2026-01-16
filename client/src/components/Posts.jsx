@@ -1,3 +1,4 @@
+import "../App.css";
 import { useEffect, useState } from "react";
 
 //TODO: render data from database
@@ -6,7 +7,7 @@ export default function Posts() {
   //State: store data in variables
   //useeffect for fetching data
   //refresh periodically to keep up to date.
-  const [reviews, setReview] = useState();
+  const [reviews, setReview] = useState([]);
 
   useEffect(() => {
     async function fetchReviews() {
@@ -18,23 +19,28 @@ export default function Posts() {
     }
     fetchReviews();
   }, []);
+
   return (
     <>
-      <h1>Hey!</h1>
-      <section>
+      <section id="postSection">
         {reviews.map((reviews, index) => {
           return (
-            <div key={index}>
-              <h1>
-                {reviews.book_title} - {reviews.author}
-              </h1>
-              <p>
-                Date Started: {reviews.date_started} - Date finished:{" "}
-                {reviews.date_finished}
-              </p>
-              <p>{reviews.review}</p>
-              {/* TODO: find a way to render stars as stars here */}
-              <p>stars {reviews.stars}</p>
+            <div key={index} className="reviewDiv">
+              <div>
+                <h1 id="titleAndAuthor">
+                  {reviews.book_title} - {reviews.author}
+                </h1>
+                <div id="reviewInfo">
+                  <p id="reviewsDates">
+                    Date Started: {reviews.date_started.split("T")[0]} - Date
+                    finished: {reviews.date_finished.split("T")[0]}
+                  </p>
+                  <p id="postReviews">{reviews.review}</p>
+                  {/* TODO: find a way to render stars as stars here */}
+                  <p id="postStars">stars {reviews.stars}</p>
+                </div>
+                {/* add a like button component! */}
+              </div>
             </div>
           );
         })}

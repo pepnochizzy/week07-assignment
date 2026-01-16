@@ -3,6 +3,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
+  font-family: "Baloo Thambi 2", sans-serif;
 }
 
 /* For the review Dialog */
@@ -86,4 +87,43 @@ button:active {
   width: fit-content;
   padding: 20px 10px 20px 15px;
   box-shadow: 3px 3px 8px #cbcaca, -3px -3px 8px #fff;
+}
+
+/* ====================== Review posts =================== */
+
+#postSection {
+  /* This margin top will need adjustment for it to be responsive same as the paddings on all elements*/
+  margin-top: 10%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 8%;
+  row-gap: 5%;
+  grid-template-rows: auto;
+  align-content: center;
+  justify-content: center;
+  background-color: #efeeee;
+}
+
+.reviewDiv {
+  border-radius: 40px;
+  padding: 20px 35px 60px 35px;
+  box-shadow: 13px 13px 20px #cbcaca, -13px -13px 20px #fff;
+}
+
+#titleAndAuthor {
+  /* background-color: #a3d2a8; */
+  padding: 20px 10px 20px 15px;
+  margin-bottom: 30px;
+  border-radius: 25px;
+  box-shadow: 8px 8px 8px #cbcaca, -8px -8px 8px #fff;
+  font-weight: 600;
+}
+#reviewInfo {
+  padding: 20px 10px 20px 15px;
+  margin-bottom: 30px;
+  border-radius: 25px;
+  /* box-shadow: inset 8px 8px 8px #cbcaca, inset -8px -8px 8px #fff; */
+  box-shadow: inset 8px 8px 8px #8bb38f, inset -8px -8px 8px #bbf2c1;
+  background-color: #a3d2a8;
+  /* background-color: #efeeee; */
 }
