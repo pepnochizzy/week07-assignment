@@ -1,4 +1,6 @@
 import { useState } from "react";
+import StarReview from "./StarReview";
+import "../App.css";
 
 //TODO: set up form to collect data for database
 export default function BookReviewForm() {
@@ -9,11 +11,16 @@ export default function BookReviewForm() {
     dateStarted: "",
     dateFinished: "",
     review: "",
-    stars: "",
+    stars: 0,
   });
 
   function handleInputChange(e) {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  }
+
+  function handleStarChange(stars) {
+    setFormValues({ ...formValues, stars });
+    console.log(stars);
   }
 
   async function handleFormSubmit(e) {
@@ -28,73 +35,85 @@ export default function BookReviewForm() {
   }
 
   return (
-    <>
-      <form onSubmit={handleFormSubmit}>
-        <h1>New Review</h1>
-        <div>
-          <label htmlFor="username">Username: </label>
-          <input
-            type="text"
-            name="username"
-            value={formValues.username}
-            required
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="bookTitle">Book Title: </label>
-          <input
-            type="text"
-            name="bookTitle"
-            value={formValues.bookTtile}
-            required
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="author">Author: </label>
-          <input
-            type="text"
-            name="author"
-            value={formValues.author}
-            required
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="dateStarted">Date started: </label>
-          <input
-            type="date"
-            name="dateStarted"
-            value={formValues.dateStarted}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="dateFinished">Date finished: </label>
-          <input
-            type="date"
-            name="dateFinished"
-            value={formValues.dateFinished}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="review">Review: </label>
-          <input
-            type="text"
-            name="review"
-            value={formValues.review}
-            required
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="starReview"> </label>
-          {/* TODO: star review input radio */}
-        </div>
-        <button type="submit">Post</button>
-      </form>
-    </>
+    <form onSubmit={handleFormSubmit}>
+      <h1>New Review</h1>
+      <div>
+        <label htmlFor="username" className="hidden"></label>
+        <input
+          id="username"
+          type="text"
+          name="username"
+          value={formValues.username}
+          required
+          onChange={handleInputChange}
+          placeholder="username"
+        />
+      </div>
+      <div>
+        <label htmlFor="bookTitle" className="hidden"></label>
+        <input
+          id="bookTitle"
+          type="text"
+          name="bookTitle"
+          value={formValues.bookTitle}
+          required
+          onChange={handleInputChange}
+          placeholder="Book Title"
+        />
+      </div>
+      <div>
+        <label htmlFor="author" className="hidden">
+          Author:{" "}
+        </label>
+        <input
+          id="author"
+          type="text"
+          name="author"
+          value={formValues.author}
+          required
+          onChange={handleInputChange}
+          placeholder="Author"
+        />
+      </div>
+      <div className="dates">
+        <label htmlFor="dateStarted">Date started: </label>
+        <input
+          id="dateStarted"
+          type="date"
+          name="dateStarted"
+          value={formValues.dateStarted}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="dates">
+        <label htmlFor="dateFinished">Date finished: </label>
+        <input
+          id="dateFinished"
+          type="date"
+          name="dateFinished"
+          value={formValues.dateFinished}
+          onChange={handleInputChange}
+          placeholder="Date finished"
+        />
+      </div>
+      <div>
+        <label htmlFor="review" className="hidden"></label>
+        <textarea
+          id="review"
+          type="text"
+          name="review"
+          value={formValues.review}
+          required
+          onChange={handleInputChange}
+          placeholder="Review"
+        />
+      </div>
+      <div id="starReviewContainer">
+        <label htmlFor="starReview"> </label>
+        {/* TODO: star review input radio */}
+        <StarReview value={formValues.stars} onChange={handleStarChange} />
+      </div>
+      <button type="submit">Post</button>
+    </form>
   );
 }

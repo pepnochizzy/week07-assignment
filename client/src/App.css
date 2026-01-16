@@ -1,6 +1,89 @@
+@import "tailwindcss";
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+}
+
+/* For the review Dialog */
+body {
+  background-color: #efeeee;
+  font-family: sans-serif;
+}
+
+form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+}
+
+form > div {
+  width: 80%;
+  margin-bottom: 30px;
+  border-radius: 25px;
+  box-shadow: inset 8px 8px 8px #cbcaca, inset -8px -8px 8px #fff;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 20px 10px 20px 15px;
+  color: #686868;
+}
+
+input::placeholder {
+  opacity: 1;
+  color: #999797;
+}
+
+textarea::placeholder {
+  opacity: 1;
+  color: #999797;
+}
+
+.dates {
+  display: flex;
+  padding: 20px 10px 20px 15px;
+  color: #999797;
+}
+
+.dates > input,
+label {
+  padding: 0;
+  color: #999797;
+}
+
+button {
+  cursor: pointer;
+  width: 80%;
+  height: 40px;
+  border-radius: 25px;
+  background-color: #a3d2a8;
+  box-shadow: 3px 3px 8px #cbcaca, -3px -3px 8px #fff;
+  font-weight: 500;
+  font-size: large;
+  color: #5e5d5d;
+}
+
+button:hover {
+  background-color: #56835a;
+  color: #999797;
+}
+
+button:active {
+  background-color: #2d452f;
+  color: #999797;
+}
+
+#stars {
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+#starReviewContainer {
+  width: fit-content;
+  padding: 20px 10px 20px 15px;
+  box-shadow: 3px 3px 8px #cbcaca, -3px -3px 8px #fff;
 }

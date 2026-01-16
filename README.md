@@ -16,3 +16,9 @@ Requirements
 🎯 Use SQL to retrieve posts from the database in your Express server.
 🎯 Display all posts using .map().
 🎯 Use an interval and useEffect() to poll your database.
+
+## Resources
+
+- I wanted to create a star rating so I used this tutorial with a few additional pieces https://www.youtube.com/watch?v=BmhU_MoxNqQ
+
+## Reflection

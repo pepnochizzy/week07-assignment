@@ -22,7 +22,6 @@ app.get("/get-reviews", async (req, res) => {
     `SELECT username, book_title, author, date_started, date_finished, review, stars FROM reviews`
   );
   res.json(query.rows);
-  console.log(res);
 });
 
 //POST route for form
