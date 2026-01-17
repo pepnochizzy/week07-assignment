@@ -1,15 +1,25 @@
 @import "tailwindcss";
 
+* {
+  box-sizing: border-box;
+}
+html {
+  min-height: 100vh;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
   font-family: "Baloo Thambi 2", sans-serif;
+  min-height: 100vh;
+  padding-bottom: 80px;
 }
 
 /* For the review Dialog */
 body {
   background-color: #efeeee;
   font-family: sans-serif;
+  padding-top: 20px;
+  min-height: 100vh;
 }
 
 form {
@@ -100,23 +110,23 @@ label {
 
 #postSection {
   /* This margin top will need adjustment for it to be responsive same as the paddings on all elements*/
-  margin-top: 10%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 8%;
-  row-gap: 5%;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
   grid-template-rows: auto;
-  align-content: center;
+  align-content: start;
   justify-content: center;
   background-color: #efeeee;
 }
 
 .reviewDiv {
   border-radius: 40px;
-  padding: 20px 35px 60px 35px;
+  padding: 20px 35px 30px 35px;
   box-shadow:
     13px 13px 20px #cbcaca,
     -13px -13px 20px #fff;
+  width: 90%;
+  justify-self: center;
 }
 
 #titleAndAuthor {
@@ -156,6 +166,147 @@ label {
   align-self: flex-end;
 }
 
-#likeButton:hover {
-  color: #a3d2a8;
+#likeButtonPressed {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    inset 6px 6px 6px #cbcaca,
+    inset -6px -6px 6px #fff;
+  align-self: flex-end;
+}
+
+/*===================lINKS/NAV================== */
+.link {
+  padding: 15px 15px 15px 15px;
+  border-radius: 15px;
+  box-shadow:
+    8px 8px 8px #cbcaca,
+    -4px -4px 6px #fff;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 5px;
+  height: 50px;
+  font-weight: 600;
+  color: #515151;
+}
+
+#linkLogo {
+  background-color: #a3d2a8;
+  padding: 15px 15px 15px 15px;
+  border-radius: 15px;
+  box-shadow:
+    8px 8px 8px #bacdbd,
+    -4px -4px 6px #fff;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 5px;
+  height: 50px;
+  font-weight: 600;
+  color: #515151;
+}
+
+#linkLogo:hover {
+  background-color: #56835a;
+  color: #515151;
+}
+
+.link:hover {
+  box-shadow:
+    inset 8px 8px 8px #cbcaca,
+    inset -6px -6px 6px #fff;
+}
+
+.link:active {
+  box-shadow:
+    inset 8px 8px 8px #cbcaca,
+    inset -6px -6px 6px #fff;
+}
+
+nav {
+  height: 70px;
+  width: 100%;
+  box-shadow: 0 2px 4px 0px #cbcaca;
+  position: fixed;
+  bottom: 0;
+  z-index: 10000;
+  background-color: #efeeee;
+}
+
+@media (min-width: 1024px) {
+  #root {
+    padding-bottom: 0;
+  }
+  body {
+    padding-top: 90px;
+    padding-bottom: 0;
+  }
+  nav {
+    margin-bottom: 20px;
+    position: fixed;
+    top: 0;
+    bottom: auto;
+  }
+
+  #postSection {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 50px;
+  }
+}
+
+/*==================Dialog===================== */
+dialog {
+  position: fixed;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  width: 40%;
+  align-self: center;
+  justify-self: center;
+  border-radius: 30px;
+  background-color: #efeeee;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(5px);
+}
+
+form {
+  justify-self: center;
+  padding-bottom: 10px;
+}
+
+#closeForm {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow:
+    6px 6px 6px #cbcaca,
+    -6px -6px 6px #fff;
+}
+
+#closeFormPressed {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow:
+    inset 6px 6px 6px #cbcaca,
+    inset -6px -6px 6px #fff;
+}
+
+/*==================homepage================= */
+#homePageContainer {
+  width: 60%;
+  padding: 50px 20px 50px 20px;
+  justify-self: center;
+  border-radius: 25px;
+  box-shadow:
+    8px 8px 8px #cbcaca,
+    -8px -8px 8px #fff;
 }

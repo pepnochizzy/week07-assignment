@@ -19,6 +19,8 @@ export default function Posts() {
       console.log(data);
     }
     fetchReviews();
+    const pollingInterval = setInterval(fetchReviews, 5000);
+    return () => clearInterval(pollingInterval);
   }, []);
 
   return (
