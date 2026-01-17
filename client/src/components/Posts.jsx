@@ -1,6 +1,7 @@
 import "../App.css";
 import { useEffect, useState } from "react";
 import LikeButton from "./LikeButton";
+import StarRating from "./StarRating";
 
 //TODO: render data from database
 export default function Posts() {
@@ -28,21 +29,27 @@ export default function Posts() {
       <section id="postSection">
         {reviews.map((reviews, index) => {
           return (
-            <div key={index} className="reviewDiv">
+            <div key={index} className="reviewDiv flex flex-col">
               <div className="flex flex-col">
                 <h1 id="titleAndAuthor">
                   {reviews.book_title} - {reviews.author}
                 </h1>
                 <div id="reviewInfo">
-                  <p id="reviewsDates">
-                    Date Started: {reviews.date_started.split("T")[0]} - Date
-                    finished: {reviews.date_finished.split("T")[0]}
-                  </p>
+                  <div className="flex place-content-between pr-2.5 pb-2">
+                    <p id="reviewsDates">
+                      <span className="font-medium">Date Started: </span>
+                      {reviews.date_started.split("T")[0]}{" "}
+                    </p>
+                    <p>
+                      <span className="font-medium">Date finished: </span>
+                      {reviews.date_finished.split("T")[0]}
+                    </p>
+                  </div>
                   <p id="postReviews">{reviews.review}</p>
-                  {/* TODO: find a way to render stars as stars here */}
-                  <p id="postStars">stars {reviews.stars}</p>
                 </div>
-                {/* add a like button component! */}
+              </div>
+              <div className="flex place-content-between mt-auto">
+                <StarRating rating={reviews.stars} />
                 <LikeButton />
               </div>
             </div>

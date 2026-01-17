@@ -25,13 +25,17 @@ export default function BookReviewForm({ modal, onClose }) {
 
   async function handleFormSubmit(e) {
     e.preventDefault();
-    await fetch("http://localhost:8080/create-review", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ formValues }),
-    });
+    try {
+      await fetch("http://localhost:8080/create-review", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ formValues }),
+      });
+    } catch (error) {
+      console.error("Submit failed:", error);
+    }
   }
 
   const [clicked, setClick] = useState(false);
@@ -51,19 +55,20 @@ export default function BookReviewForm({ modal, onClose }) {
   }, [modal]);
   return (
     <dialog ref={dialogRef} onClose={onClose}>
-      <div className="p-4">
+      <div className="p-2 justify-self-start">
         <button
           onClick={handleClose}
           aria-label="Close button"
           id={clicked ? "closeFormPressed" : "closeForm"}
           onMouseEnter={() => setClick(!clicked)}
           onMouseLeave={() => setClick(!clicked)}
+          className="cursor-pointer text-2xl font-bold text-[#515151]"
         >
           X
         </button>
       </div>
       <form onSubmit={handleFormSubmit}>
-        <h1>New Review</h1>
+        <h1 className="text-2xl font-bold text-[#a3d2a8] pb-2">New Review</h1>
         <div>
           <label htmlFor="username" className="hidden"></label>
           <input

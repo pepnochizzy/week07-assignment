@@ -14,6 +14,30 @@ html {
   padding-bottom: 80px;
 }
 
+:root {
+  --fs-xl: clamp(2rem, 2vw + 1rem, 8rem);
+  --fs-600: 2rem;
+  --fs-500: 1rem;
+  --fs-400: 0.8rem;
+}
+
+@media (min-width: 800px) {
+  :root {
+    --fs-xl: clamp(4rem, 8vw + 1rem, 6rem);
+    --fs-600: 2rem;
+    --fs-500: 1.4rem;
+    --fs-400: 1rem;
+  }
+}
+
+h1 {
+  font-size: var(--fs-600);
+}
+
+h2 {
+  font-size: var(--fs-500);
+}
+
 /* For the review Dialog */
 body {
   background-color: #efeeee;
@@ -125,7 +149,7 @@ label {
   box-shadow:
     13px 13px 20px #cbcaca,
     -13px -13px 20px #fff;
-  width: 90%;
+  width: 80%;
   justify-self: center;
 }
 
@@ -138,6 +162,8 @@ label {
     8px 8px 8px #cbcaca,
     -8px -8px 8px #fff;
   font-weight: 600;
+  color: #515151;
+  font-size: var(--fs-500);
 }
 #reviewInfo {
   padding: 20px 10px 20px 15px;
@@ -194,6 +220,20 @@ label {
   color: #515151;
 }
 
+#linkNewReview {
+  padding: 15px 15px 15px 15px;
+  border-radius: 15px;
+  box-shadow:
+    8px 8px 8px #cbcaca,
+    -4px -4px 6px #fff;
+  margin-left: 0;
+  margin-right: 15px;
+  margin-top: 5px;
+  height: 50px;
+  font-weight: 600;
+  color: #515151;
+}
+
 #linkLogo {
   background-color: #a3d2a8;
   padding: 15px 15px 15px 15px;
@@ -226,6 +266,12 @@ label {
     inset -6px -6px 6px #fff;
 }
 
+#linkNewReview:hover {
+  box-shadow:
+    inset 8px 8px 8px #cbcaca,
+    inset -6px -6px 6px #fff;
+}
+
 nav {
   height: 70px;
   width: 100%;
@@ -236,34 +282,9 @@ nav {
   background-color: #efeeee;
 }
 
-@media (min-width: 1024px) {
-  #root {
-    padding-bottom: 0;
-  }
-  body {
-    padding-top: 90px;
-    padding-bottom: 0;
-  }
-  nav {
-    margin-bottom: 20px;
-    position: fixed;
-    top: 0;
-    bottom: auto;
-  }
-
-  #postSection {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 20px;
-    row-gap: 50px;
-  }
-}
-
 /*==================Dialog===================== */
 dialog {
   position: fixed;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   width: 40%;
   align-self: center;
   justify-self: center;
@@ -305,8 +326,58 @@ form {
   width: 60%;
   padding: 50px 20px 50px 20px;
   justify-self: center;
+  align-self: center;
   border-radius: 25px;
   box-shadow:
     8px 8px 8px #cbcaca,
     -8px -8px 8px #fff;
+}
+
+#titleSpan {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: var(--fs-xl);
+  font-weight: 800;
+}
+
+/*==== Media Queries ===== */
+
+@media (min-width: 1024px) {
+  #root {
+    padding-bottom: 0;
+  }
+  body {
+    padding-top: 90px;
+    padding-bottom: 0;
+    margin-bottom: 60px;
+  }
+  nav {
+    margin-bottom: 20px;
+    position: fixed;
+    top: 0;
+    bottom: auto;
+  }
+
+  #postSection {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 50px;
+  }
+}
+
+@media (min-width: 1440px) {
+  #postSection {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 50px;
+  }
+  #homePageSection {
+    display: flex;
+    height: 50vh;
+    width: 80vw;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    border-radius: 25px;
+    box-shadow:
+      inset 8px 8px 8px #cbcaca,
+      inset -8px -8px 8px #fff;
+  }
 }
