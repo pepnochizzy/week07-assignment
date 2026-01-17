@@ -1,5 +1,6 @@
 import "../App.css";
 import { useEffect, useState } from "react";
+import LikeButton from "./LikeButton";
 
 //TODO: render data from database
 export default function Posts() {
@@ -26,7 +27,7 @@ export default function Posts() {
         {reviews.map((reviews, index) => {
           return (
             <div key={index} className="reviewDiv">
-              <div>
+              <div className="flex flex-col">
                 <h1 id="titleAndAuthor">
                   {reviews.book_title} - {reviews.author}
                 </h1>
@@ -40,6 +41,7 @@ export default function Posts() {
                   <p id="postStars">stars {reviews.stars}</p>
                 </div>
                 {/* add a like button component! */}
+                <LikeButton />
               </div>
             </div>
           );

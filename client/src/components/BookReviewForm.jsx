@@ -113,7 +113,9 @@ export default function BookReviewForm() {
         {/* TODO: star review input radio */}
         <StarReview value={formValues.stars} onChange={handleStarChange} />
       </div>
-      <button type="submit">Post</button>
+      <button type="submit" id="submit">
+        Post
+      </button>
     </form>
   );
 }

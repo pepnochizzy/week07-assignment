@@ -24,7 +24,9 @@ form > div {
   width: 80%;
   margin-bottom: 30px;
   border-radius: 25px;
-  box-shadow: inset 8px 8px 8px #cbcaca, inset -8px -8px 8px #fff;
+  box-shadow:
+    inset 8px 8px 8px #cbcaca,
+    inset -8px -8px 8px #fff;
 }
 
 input,
@@ -56,24 +58,27 @@ label {
   color: #999797;
 }
 
-button {
+#submit {
   cursor: pointer;
   width: 80%;
   height: 40px;
   border-radius: 25px;
   background-color: #a3d2a8;
-  box-shadow: 3px 3px 8px #cbcaca, -3px -3px 8px #fff;
+  box-shadow:
+    3px 3px 8px #cbcaca,
+    -3px -3px 8px #fff;
   font-weight: 500;
   font-size: large;
   color: #5e5d5d;
+  transition: 0.5s;
 }
 
-button:hover {
+#submit:hover {
   background-color: #56835a;
   color: #999797;
 }
 
-button:active {
+#submit:active {
   background-color: #2d452f;
   color: #999797;
 }
@@ -86,7 +91,9 @@ button:active {
 #starReviewContainer {
   width: fit-content;
   padding: 20px 10px 20px 15px;
-  box-shadow: 3px 3px 8px #cbcaca, -3px -3px 8px #fff;
+  box-shadow:
+    3px 3px 8px #cbcaca,
+    -3px -3px 8px #fff;
 }
 
 /* ====================== Review posts =================== */
@@ -107,7 +114,9 @@ button:active {
 .reviewDiv {
   border-radius: 40px;
   padding: 20px 35px 60px 35px;
-  box-shadow: 13px 13px 20px #cbcaca, -13px -13px 20px #fff;
+  box-shadow:
+    13px 13px 20px #cbcaca,
+    -13px -13px 20px #fff;
 }
 
 #titleAndAuthor {
@@ -115,7 +124,9 @@ button:active {
   padding: 20px 10px 20px 15px;
   margin-bottom: 30px;
   border-radius: 25px;
-  box-shadow: 8px 8px 8px #cbcaca, -8px -8px 8px #fff;
+  box-shadow:
+    8px 8px 8px #cbcaca,
+    -8px -8px 8px #fff;
   font-weight: 600;
 }
 #reviewInfo {
@@ -123,7 +134,28 @@ button:active {
   margin-bottom: 30px;
   border-radius: 25px;
   /* box-shadow: inset 8px 8px 8px #cbcaca, inset -8px -8px 8px #fff; */
-  box-shadow: inset 8px 8px 8px #8bb38f, inset -8px -8px 8px #bbf2c1;
+  box-shadow:
+    inset 8px 8px 8px #8bb38f,
+    inset -8px -8px 8px #bbf2c1;
   background-color: #a3d2a8;
   /* background-color: #efeeee; */
+}
+
+/* ============like button============ */
+
+#likeButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    6px 6px 6px #cbcaca,
+    -6px -6px 6px #fff;
+  align-self: flex-end;
+}
+
+#likeButton:hover {
+  color: #a3d2a8;
 }
