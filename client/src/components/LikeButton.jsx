@@ -12,7 +12,7 @@ export default function LikeButton({ postId }) {
   function handleOnClick() {
     const newLiked = !liked;
     setLiked(newLiked);
-    fetch(`http://localhost:8080/like/${postId}`, {
+    fetch(`https://week07-assignment-server-x2f6.onrender.com/like/${postId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +23,9 @@ export default function LikeButton({ postId }) {
 
   useEffect(() => {
     async function fetchLikes() {
-      const response = await fetch("http://localhost:8080/likes");
+      const response = await fetch(
+        "https://week07-assignment-server-x2f6.onrender.com/likes",
+      );
       const data = await response.json();
       const postLikesdata = data.find((item) => item.id === postId);
       setPostLikes(postLikesdata.likes);

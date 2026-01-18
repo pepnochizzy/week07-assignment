@@ -26,13 +26,16 @@ export default function BookReviewForm({ onClose }) {
   async function handleFormSubmit(e) {
     e.preventDefault();
     try {
-      await fetch("http://localhost:8080/create-review", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      await fetch(
+        "https://week07-assignment-server-x2f6.onrender.com/create-review",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ formValues }),
         },
-        body: JSON.stringify({ formValues }),
-      });
+      );
       onClose();
     } catch (error) {
       console.error("Submit failed:", error);

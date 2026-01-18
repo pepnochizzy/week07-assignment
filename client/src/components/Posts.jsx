@@ -19,7 +19,9 @@ export default function Posts() {
 
   useEffect(() => {
     async function fetchReviews() {
-      const response = await fetch("http://localhost:8080/get-reviews");
+      const response = await fetch(
+        "https://week07-assignment-server-x2f6.onrender.com/get-reviews",
+      );
       // const reviewData = await response.json();
       const data = await response.json();
       setReview(data);

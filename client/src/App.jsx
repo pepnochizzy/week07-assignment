@@ -4,8 +4,6 @@ import "./App.css";
 import HomePage from "./components/HomePage";
 import Posts from "./components/Posts";
 import Header from "./components/Header";
-import NewPostButton from "./components/NewPostButton";
-import FilterButtons from "./components/FilterPosts";
 import ButtonBanner from "./components/ButtonBanner";
 
 //TODO: set up routing system and import relevant compononents

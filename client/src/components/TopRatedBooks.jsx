@@ -6,7 +6,9 @@ export default function TopRatedBooks() {
 
   useEffect(() => {
     async function fetchTopRated() {
-      const response = await fetch("http://localhost:8080/top-rated");
+      const response = await fetch(
+        "https://week07-assignment-server-x2f6.onrender.com/top-rated",
+      );
       const data = await response.json();
       setTopReviews(data);
     }

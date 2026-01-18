@@ -9,9 +9,12 @@ export default function DeletePostModal({ id, onClose }) {
   }
 
   function handleClick() {
-    fetch(`http://localhost:8080/delete-post/${id}`, {
-      method: "DELETE",
-    });
+    fetch(
+      `https://week07-assignment-server-x2f6.onrender.com/delete-post/${id}`,
+      {
+        method: "DELETE",
+      },
+    );
     onClose();
   }
 
