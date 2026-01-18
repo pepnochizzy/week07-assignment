@@ -68,3 +68,27 @@ app.delete("/delete-post/:id", (req, res) => {
     res.status(500).json({ request: "fail" });
   }
 });
+
+//like route
+
+app.post("/like/:id", (req, res) => {
+  try {
+    const idParams = req.params.id;
+    const like = req.body.like;
+    const query = db.query(
+      `UPDATE reviews SET likes = likes + $1 WHERE id = $2`,
+      [like, idParams],
+    );
+    res.status(200).json({ request: "success" });
+  } catch (error) {
+    console.error(error, "Request failed.");
+    res.status(500).json({ request: "fail" });
+  }
+});
+
+//get likes
+
+app.get("/likes", async (req, res) => {
+  const query = await db.query(`SELECT id, likes FROM reviews`);
+  res.json(query.rows);
+});

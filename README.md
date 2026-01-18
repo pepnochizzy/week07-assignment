@@ -25,6 +25,8 @@ Requirements
 - Resources for conditionally rendering filter buttons: https://reactrouter.com/api/hooks/useLocation
 - Resources for filtering by star ratings: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 - Resources for filtering button https://react.dev/reference/react-dom/components/select, https://reactrouter.com/api/hooks/useNavigate
+- Resources for localstorage: https://www.freecodecamp.org/news/how-to-use-localstorage-with-react-hooks-to-set-and-get-items/
+- MDN for things like data.find in my likebutton. I did need to check with chatgpt as to what to look up for this, I also asked it to help with explaining it to me.
 
 ## Reflection
 

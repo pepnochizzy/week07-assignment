@@ -65,7 +65,7 @@ export default function Posts() {
                 <StarRating rating={reviews.stars} />
                 <div className="flex flex-row gap-4">
                   <DeletePostButton id={reviews.id} />
-                  <LikeButton />
+                  <LikeButton postId={reviews.id} />
                 </div>
               </div>
             </div>
