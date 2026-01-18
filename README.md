@@ -41,3 +41,10 @@ Requirements
 - Another limitation of this app is the like button feature. I understand that like buttons will never be robust until we understand user authentication. I thought about adding a column in my database called "Likes", once a post is liked it will send a +1 to this column and if the user unlikes it, it would send a -1 to that column for that book. I could then store whether or not a post was liked in local storage so that when the user refreshes (or just comes back to the page), the buttons would remain in the state the user left them. Limitations here are that a user could delete their local storage and therefore increase the likes of a post as much as they want. I am unsure if there is a way around this without authentication.
 - What did I complete from requirements? : Create a client using React ✅ Use Express to create server with GET and POST ✅ Build React form for post creations ✅ multiple pages using React Router ✅ design database schema and seed database with realistic data ✅ use SQL to retrieve posts from database ✅ diplay all posts using .map()✅ use interval and useeffect to poll✅
 - I did want to ask about the interval/useEffect for polling, I have the interval set to 5 seconds. However, due to how my components are laid out, I was unsure how to create a "refresh" on post submission. I thought it was okay since the most time you would wait after submitting is 5 seconds, this is not outside of the ordinary for refreshing a social media page but I did wonder if there was a better way for this? I tried to add the fetch function to the post submit but because of the way you pass props etc and the layout of my components, I could not get the function into the create post component.
+
+
+
+## DATA SCHEMA AND QUERIES:
+<img width="3195" height="896" alt="image" src="https://github.com/user-attachments/assets/1c7492cd-a541-45d4-9658-9ea6df72ba66" />
+<img width="2207" height="1656" alt="image" src="https://github.com/user-attachments/assets/8a682d44-fa9f-4b1d-9b63-4a77ff515cd8" />
+
