@@ -112,6 +112,7 @@ export default function BookReviewForm({ onClose }) {
             name="dateStarted"
             value={formValues.dateStarted}
             onChange={handleInputChange}
+            required
           />
         </div>
         <div className="dates">
@@ -123,6 +124,7 @@ export default function BookReviewForm({ onClose }) {
             value={formValues.dateFinished}
             onChange={handleInputChange}
             placeholder="Date finished"
+            required
           />
         </div>
         <div>

@@ -4,18 +4,10 @@ import { MdOutlinePostAdd } from "react-icons/md";
 
 export default function NewPostButton({ id, text }) {
   const [modal, setModal] = useState(false);
-  // const [classInfo, setClassInfo] = useState(null);
+
   function handleClose() {
     setModal(false);
   }
-
-  // useEffect(() => {
-  //   if (id === "linkNewReview") {
-  //     setClassInfo("pl-5 cursor-pointer pb-3.5");
-  //   } else if (id === "newPostButton") {
-  //     setClassInfo("cursor-pointer");
-  //   }
-  // }, []);
 
   const classInfo =
     id === "linkNewReview"
@@ -36,6 +28,3 @@ export default function NewPostButton({ id, text }) {
     </div>
   );
 }
-// {id === "linkNewReview" && <a className="text-[16px]">{text}</a>}
-// {id === "linkNewReview" && className="pl-5 cursor-pointer pb-3.5"}
-//id === "linkNewReview" && setClassInfo("pl-5 cursor-pointer pb-3.5")

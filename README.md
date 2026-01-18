@@ -24,6 +24,7 @@ Requirements
 - Resources for SQL https://www.w3schools.com/sql/sql_ref_set.asp
 - Resources for conditionally rendering filter buttons: https://reactrouter.com/api/hooks/useLocation
 - Resources for filtering by star ratings: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+- Resources for filtering button https://react.dev/reference/react-dom/components/select, https://reactrouter.com/api/hooks/useNavigate
 
 ## Reflection
 

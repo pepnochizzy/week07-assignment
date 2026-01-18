@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 
 app.get("/get-reviews", async (req, res) => {
   const query = await db.query(
-    `SELECT username, book_title, author, date_started, date_finished, review, stars FROM reviews`,
+    `SELECT id, username, book_title, author, date_started, date_finished, review, stars FROM reviews`,
   );
   res.json(query.rows);
 });
@@ -51,9 +51,20 @@ app.post("/create-review", (req, res) => {
   }
 });
 
-//todo: delete or update route
-
 app.get("/top-rated", async (req, res) => {
   const query = await db.query(`SELECT * FROM top_rated_books`);
   res.json(query.rows);
+});
+
+//todo: delete or update route
+
+app.delete("/delete-post/:id", (req, res) => {
+  try {
+    const idParams = req.params.id;
+    const query = db.query(`DELETE FROM reviews WHERE id = $1`, [idParams]);
+    res.status(200).json({ request: "success" });
+  } catch (error) {
+    console.error(error, "Request failed. Turn off and on");
+    res.status(500).json({ request: "fail" });
+  }
 });

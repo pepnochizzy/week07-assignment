@@ -19,6 +19,7 @@ export default function StarReview({ value, onChange }) {
               value={currentRate}
               checked={value === currentRate}
               onChange={() => onChange(currentRate)}
+              required
             />
             <FaStar
               color={currentRate <= (hover || value) ? "#a3d2a8" : "#999797"}

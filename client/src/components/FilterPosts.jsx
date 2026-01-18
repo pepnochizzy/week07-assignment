@@ -12,6 +12,8 @@ export default function FilterButtons() {
       navigate(`/posts?sort=desc`);
     } else if (value === "Lowest rating to highest") {
       navigate(`/posts?sort=asc`);
+    } else if (value === "reset") {
+      navigate(`/posts`);
     }
   };
 
@@ -23,6 +25,7 @@ export default function FilterButtons() {
         </option>
         <option value={"Highest rating to lowest"}>Highest rated first</option>
         <option value={"Lowest rating to highest"}>Lowest rated first</option>
+        <option value={"reset"}>Reset</option>
       </select>
     </div>
   );

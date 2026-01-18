@@ -4,6 +4,7 @@ import LikeButton from "./LikeButton";
 import StarRating from "./StarRating";
 import { Link, Outlet } from "react-router";
 import { useSearchParams } from "react-router";
+import DeletePostButton from "./DeletePostButton";
 
 //TODO: render data from database
 
@@ -25,7 +26,7 @@ export default function Posts() {
       console.log(data);
     }
     fetchReviews();
-    const pollingInterval = setInterval(fetchReviews, 5000);
+    const pollingInterval = setInterval(fetchReviews, 3000);
     return () => clearInterval(pollingInterval);
   }, []);
 
@@ -39,9 +40,9 @@ export default function Posts() {
   return (
     <>
       <main id="postSection">
-        {reviews.map((reviews, index) => {
+        {reviews.map((reviews) => {
           return (
-            <div key={index} className="reviewDiv flex flex-col">
+            <div key={reviews.id} className="reviewDiv flex flex-col">
               <div className="flex flex-col">
                 <h1 id="titleAndAuthor">
                   {reviews.book_title} - {reviews.author}
@@ -62,7 +63,10 @@ export default function Posts() {
               </div>
               <div className="flex place-content-between mt-auto">
                 <StarRating rating={reviews.stars} />
-                <LikeButton />
+                <div className="flex flex-row gap-4">
+                  <DeletePostButton id={reviews.id} />
+                  <LikeButton />
+                </div>
               </div>
             </div>
           );

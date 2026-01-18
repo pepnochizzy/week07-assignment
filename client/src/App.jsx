@@ -15,8 +15,6 @@ function App() {
     <>
       <Header />
       <ButtonBanner />
-      {/* <NewPostButton id={"likeButton"} />
-      {location.pathname === "/posts" && <FilterButtons />} */}
       <Routes>
         <Route path={"/"} element={<HomePage />} />
         <Route path={"/posts"} element={<Posts />} />

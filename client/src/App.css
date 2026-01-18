@@ -176,7 +176,7 @@ label {
   /* background-color: #efeeee; */
 }
 
-/* ============like button============ */
+/* ============like and delete button============ */
 
 #likeButton {
   width: 50px;
@@ -204,6 +204,31 @@ label {
   align-self: flex-end;
 }
 
+#deleteButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    6px 6px 6px #cbcaca,
+    -6px -6px 6px #fff;
+  align-self: flex-end;
+}
+
+#deleteButtonPressed {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    inset 6px 6px 6px #cbcaca,
+    inset -6px -6px 6px #fff;
+  align-self: flex-end;
+}
 /*===================lINKS/NAV================== */
 .link {
   padding: 15px 15px 15px 15px;
@@ -281,7 +306,7 @@ nav {
   background-color: #efeeee;
 }
 
-/*==================Dialog===================== */
+/*==================Dialogs===================== */
 dialog {
   position: fixed;
   width: 40%;
@@ -318,6 +343,67 @@ form {
   box-shadow:
     inset 6px 6px 6px #cbcaca,
     inset -6px -6px 6px #fff;
+}
+
+#deleteDialog {
+  padding: 30px 30px 30px 30px;
+  position: fixed;
+  height: fit-content;
+  align-self: center;
+  justify-self: center;
+  border-radius: 30px;
+  background-color: #efeeee;
+  font-family: sans-serif;
+}
+
+#closeDeletePressed {
+  width: fit-content;
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow:
+    inset 6px 6px 6px #cbcaca,
+    inset -6px -6px 6px #fff;
+  color: #a3d2a8;
+}
+
+#closeDelete {
+  width: fit-content;
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow:
+    6px 6px 6px #cbcaca,
+    -6px -6px 6px #fff;
+}
+
+#delete {
+  width: fit-content;
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow:
+    6px 6px 6px #cbcaca,
+    -6px -6px 6px #fff;
+}
+
+#deletePressed {
+  width: fit-content;
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow:
+    inset 6px 6px 6px #cbcaca,
+    inset -6px -6px 6px #fff;
+  color: #d03d3d;
+}
+
+#deleteDialogContainer {
+  background-color: #efeeee;
+  border-radius: 20px;
+  box-shadow:
+    inset 10px 10px 10px #cbcaca,
+    inset -10px -10px 10px #fff;
 }
 
 /*==================homepage================= */
