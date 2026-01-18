@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 
 app.get("/get-reviews", async (req, res) => {
   const query = await db.query(
-    `SELECT username, book_title, author, date_started, date_finished, review, stars FROM reviews`
+    `SELECT username, book_title, author, date_started, date_finished, review, stars FROM reviews`,
   );
   res.json(query.rows);
 });
@@ -42,7 +42,7 @@ app.post("/create-review", (req, res) => {
         data.dateFinished,
         data.review,
         data.stars,
-      ]
+      ],
     );
     res.status(200).json({ request: "success" });
   } catch (error) {
@@ -52,3 +52,8 @@ app.post("/create-review", (req, res) => {
 });
 
 //todo: delete or update route
+
+app.get("/top-rated", async (req, res) => {
+  const query = await db.query(`SELECT * FROM top_rated_books`);
+  res.json(query.rows);
+});

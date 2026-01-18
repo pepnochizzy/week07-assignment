@@ -3,7 +3,7 @@ import StarReview from "./StarReview";
 import "../App.css";
 
 //TODO: set up form to collect data for database
-export default function BookReviewForm({ modal, onClose }) {
+export default function BookReviewForm({ onClose }) {
   const [formValues, setFormValues] = useState({
     username: "",
     bookTitle: "",
@@ -33,6 +33,7 @@ export default function BookReviewForm({ modal, onClose }) {
         },
         body: JSON.stringify({ formValues }),
       });
+      onClose();
     } catch (error) {
       console.error("Submit failed:", error);
     }
@@ -43,18 +44,14 @@ export default function BookReviewForm({ modal, onClose }) {
   const dialogRef = useRef(null);
 
   function handleClose() {
-    setClick(!clicked);
-    dialogRef.current.close();
     onClose();
   }
 
   useEffect(() => {
-    if (modal && dialogRef.current) {
-      dialogRef.current.showModal();
-    }
-  }, [modal]);
+    dialogRef.current?.showModal();
+  }, []);
   return (
-    <dialog ref={dialogRef} onClose={onClose}>
+    <dialog ref={dialogRef}>
       <div className="p-2 justify-self-start">
         <button
           onClick={handleClose}
@@ -142,7 +139,6 @@ export default function BookReviewForm({ modal, onClose }) {
         </div>
         <div id="starReviewContainer">
           <label htmlFor="starReview"> </label>
-          {/* TODO: star review input radio */}
           <StarReview value={formValues.stars} onChange={handleStarChange} />
         </div>
         <button type="submit" id="submit">

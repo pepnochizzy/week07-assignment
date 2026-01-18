@@ -2,13 +2,18 @@ import "../App.css";
 import { useEffect, useState } from "react";
 import LikeButton from "./LikeButton";
 import StarRating from "./StarRating";
+import { Link, Outlet } from "react-router";
+import { useSearchParams } from "react-router";
 
 //TODO: render data from database
+
 export default function Posts() {
   //Todo: set up get route
   //State: store data in variables
   //useeffect for fetching data
   //refresh periodically to keep up to date.
+  let [searchParams] = useSearchParams();
+  const sort = searchParams.get("sort");
   const [reviews, setReview] = useState([]);
 
   useEffect(() => {
@@ -24,9 +29,16 @@ export default function Posts() {
     return () => clearInterval(pollingInterval);
   }, []);
 
+  //TODO: sort by review ascending or descending
+  if (sort === "asc") {
+    reviews.sort((a, b) => a.stars - b.stars);
+  } else if (sort === "desc") {
+    reviews.sort((a, b) => b.stars - a.stars);
+  }
+
   return (
     <>
-      <section id="postSection">
+      <main id="postSection">
         {reviews.map((reviews, index) => {
           return (
             <div key={index} className="reviewDiv flex flex-col">
@@ -55,7 +67,7 @@ export default function Posts() {
             </div>
           );
         })}
-      </section>
+      </main>
     </>
   );
 }

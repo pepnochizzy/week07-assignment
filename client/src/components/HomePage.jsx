@@ -1,4 +1,5 @@
 import "../App.css";
+import TopRatedBooks from "./TopRatedBooks";
 export default function HomePage() {
   return (
     <>
@@ -19,11 +20,16 @@ export default function HomePage() {
             A library of literary reviews
           </h2>
         </div>
+
+        <div>
+          {/* <p className="text-center pt-10 text-[#515151] font-medium text-4xl">
+          Our top rated books according to you, our{" "}
+          <span className="text-[#a3d2a8]">experts</span>:
+        </p> */}
+          {/* //TODO: insert a query, selects book titles and averages for reviews for the top 5 reviewed books. */}
+          <TopRatedBooks />
+        </div>
       </main>
-      <div>
-        <p>Our top rated books according to you, our experts:</p>
-        {/* //TODO: insert a query, selects book titles and averages for reviews for the top 5 reviewed books. */}
-      </div>
     </>
   );
 }

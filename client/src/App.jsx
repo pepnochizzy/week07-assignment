@@ -1,10 +1,12 @@
-import { Link, Route, Routes } from "react-router";
+import { Route, Routes } from "react-router";
 import "./App.css";
 
 import HomePage from "./components/HomePage";
 import Posts from "./components/Posts";
 import Header from "./components/Header";
 import NewPostButton from "./components/NewPostButton";
+import FilterButtons from "./components/FilterPosts";
+import ButtonBanner from "./components/ButtonBanner";
 
 //TODO: set up routing system and import relevant compononents
 //note: have a component for your root route too
@@ -12,7 +14,9 @@ function App() {
   return (
     <>
       <Header />
-      <NewPostButton id={"likeButton"} />
+      <ButtonBanner />
+      {/* <NewPostButton id={"likeButton"} />
+      {location.pathname === "/posts" && <FilterButtons />} */}
       <Routes>
         <Route path={"/"} element={<HomePage />} />
         <Route path={"/posts"} element={<Posts />} />

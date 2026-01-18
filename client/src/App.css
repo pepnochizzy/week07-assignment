@@ -133,7 +133,6 @@ label {
 /* ====================== Review posts =================== */
 
 #postSection {
-  /* This margin top will need adjustment for it to be responsive same as the paddings on all elements*/
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 20px;
@@ -370,8 +369,11 @@ form {
   }
   #homePageSection {
     display: flex;
-    height: 50vh;
-    width: 80vw;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    /* height: 50vh; */
+    width: 90vw;
     justify-self: center;
     align-self: center;
     justify-content: center;
@@ -380,4 +382,33 @@ form {
       inset 8px 8px 8px #cbcaca,
       inset -8px -8px 8px #fff;
   }
+}
+
+/*======Top rated reviews=======*/
+
+.topRatedReviewsContainers {
+  font-size: var(--fs-500);
+  font-weight: 500;
+  border-radius: 40px;
+  padding: 20px 35px 30px 35px;
+  box-shadow:
+    13px 13px 20px #cbcaca,
+    -13px -13px 20px #fff;
+  width: 80%;
+  margin-bottom: 30px;
+  justify-self: center;
+}
+
+/*============New post button=============*/
+#newPostButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    6px 6px 6px #cbcaca,
+    -6px -6px 6px #fff;
+  align-self: flex-end;
 }
